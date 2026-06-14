@@ -172,3 +172,15 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+# macOS
+.DS_Store
+
+# Large local datasets (store on Drive / local only)
+data_preparation/datasets/
+
+# Optional: ignore common geospatial binaries anywhere
+*.tif
+*.tiff
+*.kmz
