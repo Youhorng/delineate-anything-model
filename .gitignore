@@ -184,3 +184,5 @@ data_preparation/datasets/
 *.tif
 *.tiff
 *.kmz
+
+notebooks/

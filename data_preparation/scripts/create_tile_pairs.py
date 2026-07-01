@@ -9,7 +9,8 @@ BRANCHES = {
     "koh_andet": "tko",
     "preah_sdach": "pvg",
 }
-DEFAULT_VAL_TILES = {"bth_id_15", "tko_id_14", "pvg_id_15"}
+DEFAULT_VAL_TILES = {"bth_id_15", "tko_id_14", "pvg_id_12"}
+EXCLUDED_TILES = {"pvg_id_2", "pvg_id_5", "pvg_id_15", "tko_id_8"}
 
 
 def tile_key(prefix: str, tile_id: int) -> str:
@@ -57,6 +58,8 @@ def collect_pairs(
 
             tile_id = int(m.group(1))
             key = tile_key(prefix, tile_id)
+            if key in EXCLUDED_TILES:
+                continue
             geojson = find_geojson(geojson_dir, prefix, tile_id)
             if geojson is None:
                 continue
